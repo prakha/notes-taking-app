@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  backend:
+      build: ./backend
+      container_name: backend_c
+      ports:
+        - '4000:4000'
+      depends_on:
+        - mongo
+  mongo:
+      image: mongo:3.6.19-xenial
+      ports:
+        - "27017:27017"
+      
+  frontend:
+      build: ./frontend
+      container_name: frontend_c
+      ports:
+        - '3000:3000'
+  
+
+
+
+
+     
